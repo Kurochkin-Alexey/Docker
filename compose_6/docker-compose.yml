@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  service:
+    build: ../dockle_5/
+    container_name: cont
+  proxy_nginx:
+    image: nginx
+    container_name: proxy
+    ports:
+      - 80:8080
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
